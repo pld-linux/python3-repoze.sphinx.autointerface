@@ -7,7 +7,7 @@ Summary:	Sphinx extension: auto-generate API docs from Zope interfaces
 Summary(pl.UTF-8):	Rozszerzenie Sphinksa: automatyczne generowanie dokumentacji API z interfejsów Zope
 Name:		python-repoze.sphinx.autointerface
 Version:	0.8
-Release:	2
+Release:	3
 License:	BSD-like
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/repoze-sphinx-autointerface/
