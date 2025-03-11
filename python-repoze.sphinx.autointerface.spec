@@ -8,7 +8,7 @@ Summary(pl.UTF-8):	Rozszerzenie Sphinksa: automatyczne generowanie dokumentacji 
 Name:		python-repoze.sphinx.autointerface
 # keep 0.x here for python2 support
 Version:	0.8
-Release:	7
+Release:	8
 License:	BSD-like
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/repoze-sphinx-autointerface/
