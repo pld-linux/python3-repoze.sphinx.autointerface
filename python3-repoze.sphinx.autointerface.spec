@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	tests	# unit tests
+
 Summary:	Sphinx extension: auto-generate API docs from Zope interfaces
 Summary(pl.UTF-8):	Rozszerzenie Sphinksa: automatyczne generowanie dokumentacji API z interfejsów Zope
 Name:		python3-repoze.sphinx.autointerface
@@ -11,6 +15,11 @@ Source0:	https://files.pythonhosted.org/packages/source/r/repoze.sphinx.autointe
 URL:		https://pypi.org/project/repoze.sphinx.autointerface/
 BuildRequires:	python3-modules >= 1:3.6
 BuildRequires:	python3-setuptools
+%if %{with tests}
+BuildRequires:	python3-Sphinx >= 4.0
+BuildRequires:	python3-zope.interface
+BuildRequires:	python3-zope.testrunner
+%endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 Requires:	python3-modules >= 1:3.6
@@ -32,6 +41,11 @@ zope.interface w kodzie.
 
 %build
 %py3_build
+
+%if %{with tests}
+PYTHONPATH=$(pwd) \
+zope-testrunner-3 --test-path .
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
